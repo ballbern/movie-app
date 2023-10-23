@@ -1,26 +1,51 @@
 :root {
-  --star-color: #d37d22;
-  --thumb-color: #4b4bd8;
+  /* base color */
+  --orange: #d37d22;
+  --purple: #4b4bd8;
   --white: white;
-  --layout-icon-color: #7a7474;
-  --button-color: #b5acac;
-  --button-active-color: #655b5b;
-  --text-color: #121212;
-  --body-color: #e7e8eb;
-
+  --gray-100: #e7e8eb;
+  --gray-200: #b5acac;
+  --gray-300: #7a7474;
+  --gray-400: #655b5b;
+  --gray-600: #252525;
+  --gray-900: #121212;
+  
+  /* body layout */
+  --body-color: var(--gray-100);
+  --layout-icon-color: var(--gray-300);
+  
   /* header */
   --header-background-color: var(--white);
-
+  
   /* card */
   --card-background-color: var(--white);
+  
+  /* button */
+  --button-color: var(--gray-200);
+  --button-active-color: var(--gray-400);
+  
+  /* other */
+  --star-color: var(--orange);
+  --thumb-color: var(--purple);
+  --text-color: var(--gray-900);
 }
 
 .dark-theme {
-  --star-color: green;
-  --header-background-color: #121212;
-  --card-background-color: #121212;
+  /* body layout */
+  --body-color: var(--gray-600);
+
+  /* header */
+  --header-background-color: var(--gray-900);
+
+  /* card */
+  --card-background-color: var(--gray-900);
+
+  /* button */
+  --button-active-color: var(--white);
+
+  /* other */
   --text-color: var(--white);
-  --body-color: #252525
+  --star-color: green;
 }
 
 @font-face {

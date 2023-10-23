@@ -12,7 +12,7 @@ export const StyledButton = styled.button<StyledButtonProps>`
         }`
       : "none"};
   color: ${({ active }) =>
-    !active ? "var(--button-color)" : "--button-active-color"};
+    !active ? "var(--button-color)" : "var(--button-active-color)"};
   border-radius: 0.2rem;
   padding: 0.3rem 0.6rem;
   font: inherit;
