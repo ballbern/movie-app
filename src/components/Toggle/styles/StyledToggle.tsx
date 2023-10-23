@@ -23,6 +23,7 @@ export const StyledToggle = styled.label`
       -webkit-transform: translateX(26px);
       -ms-transform: translateX(26px);
       transform: translateX(26px);
+      left: -1px;
     }
   }
 
@@ -43,7 +44,7 @@ export const StyledToggle = styled.label`
       content: "";
       height: 24px;
       width: 24px;
-      left: -1px;
+      left: 2px;
       bottom: 1px;
       background-color: var(--white);
       -webkit-transition: 0.4s;

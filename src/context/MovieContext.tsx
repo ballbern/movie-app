@@ -6,6 +6,7 @@ type MovieProviderProps = {
 
 type MovieContextProps = {
   gridLayout: (num: number) => void;
+  toggleTheme: (toggle: boolean) => void;
   layout: number;
 };
 
@@ -23,10 +24,20 @@ export const MovieProvider = ({ children }: MovieProviderProps) => {
 
   const gridLayout = (num: number) => setLayout(num);
 
+  const toggleTheme = (toggle: boolean) => {
+    const body = document.body;
+    if (toggle) {
+      body.classList.add("dark-theme");
+    } else {
+      body.classList.remove("dark-theme");
+    }
+  };
+
   return (
     <MovieContext.Provider
       value={{
         gridLayout,
+        toggleTheme,
         layout,
       }}
     >

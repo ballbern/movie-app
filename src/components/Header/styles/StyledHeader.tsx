@@ -2,14 +2,12 @@ import styled from "styled-components";
 
 export const StyledHeader = styled.header`
   display: flex;
-  /* position: fixed;
-  overflow: hidden; */
   top: 0;
   width: 100%;
-  background-color: var(--white);
+  background-color: var(--header-background-color);
   height: 5rem;
   margin-bottom: 2rem;
   align-items: center;
   justify-content: space-between;
-  /* z-index: 1; */
+  color: var(--text-color);
 `;

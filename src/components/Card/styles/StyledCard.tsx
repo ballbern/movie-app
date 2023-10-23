@@ -9,10 +9,11 @@ export const StyledCard = styled.div<StyledCardProps>`
   display: flex;
   flex-direction: ${({ rotate }) => (rotate ? "row" : "column")};
   justify-content: ${({ rotate }) => (rotate ? "center" : "space-between")};
-  border: 1px solid var(--white);
-  background-color: var(--white);
+  border: 1px solid var(--card-background-color);
+  background-color: var(--card-background-color);
   cursor: pointer;
   transform: rotateY(${({ rotate }) => (rotate ? "360deg" : "0deg")});
+  color: var(--text-color);
 
   &:hover {
     transform: scale(1.1);
