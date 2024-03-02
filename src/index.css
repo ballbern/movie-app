@@ -2,6 +2,9 @@
   /* base color */
   --orange: #d37d22;
   --purple: #4b4bd8;
+  --blue: #2196f3;
+  --blue-100: #2a93fd;
+  --green: #2bf52b;
   --white: white;
   --gray-100: #e7e8eb;
   --gray-200: #b5acac;
@@ -9,21 +12,25 @@
   --gray-400: #655b5b;
   --gray-600: #252525;
   --gray-900: #121212;
-  
+
   /* body layout */
   --body-color: var(--gray-100);
   --layout-icon-color: var(--gray-300);
-  
+
   /* header */
   --header-background-color: var(--white);
-  
+
+  /* footer */
+  --footer-background-color: var(--white);
+
   /* card */
   --card-background-color: var(--white);
-  
+
   /* button */
   --button-color: var(--gray-200);
   --button-active-color: var(--gray-400);
-  
+  --toggle-background-color: var(--gray-200);
+
   /* other */
   --star-color: var(--orange);
   --thumb-color: var(--purple);
@@ -37,15 +44,20 @@
   /* header */
   --header-background-color: var(--gray-900);
 
+  /* footer */
+  --footer-background-color: var(--gray-900);
+
   /* card */
   --card-background-color: var(--gray-900);
 
   /* button */
   --button-active-color: var(--white);
+  --toggle-background-color: var(--gray-400);
 
   /* other */
   --text-color: var(--white);
-  --star-color: green;
+  --star-color: var(--green);
+  --thumb-color: var(--blue-100);
 }
 
 @font-face {

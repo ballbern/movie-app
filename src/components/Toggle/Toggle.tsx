@@ -2,13 +2,13 @@ import { StyledToggle } from "./styles";
 
 type ToggleProps = {
   checked: boolean;
-  onClick: () => void;
+  onChange: () => void;
 };
 
-export const Toggle = ({ checked, onClick, ...props }: ToggleProps) => {
+export const Toggle = ({ checked, onChange, ...props }: ToggleProps) => {
   return (
     <StyledToggle {...props}>
-      <input onClick={onClick} type='checkbox' checked={checked} />
+      <input onChange={onChange} type='checkbox' checked={checked} />
       <span></span>
     </StyledToggle>
   );

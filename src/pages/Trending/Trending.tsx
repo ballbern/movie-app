@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Card } from "../../components";
 import { useMovie } from "../../context/MovieContext";
-import { BREAKPOINTS } from "../../utils";
+import { useMovieQuery } from "../../hooks/useMovieQuery";
 
 type StyledMainContentProps = {
   layout: number;
@@ -14,21 +14,9 @@ const StyledMainContent = styled.main<StyledMainContentProps>`
   width: ${({ layout }) => (layout !== 1 ? "80%" : "40%")};
   gap: 1rem;
   margin-bottom: 3rem;
-
-  /* @media (min-width: ${BREAKPOINTS.sm}) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  @media (min-width: ${BREAKPOINTS.md}) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (min-width: ${BREAKPOINTS.lg}) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media (min-width: ${BREAKPOINTS.xl}) {
-  } */
 `;
 
-interface Movie {
+export type Movie = {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
@@ -43,14 +31,32 @@ interface Movie {
   video: boolean;
   vote_average: number;
   vote_count: number;
-}
+};
 
 type MoveData = {
   data: Movie[];
+  isLoading: boolean;
+  isFetching: boolean;
 };
 
 export const Trending = ({ data }: MoveData) => {
   const { layout } = useMovie();
+  const { isLoading, isFetching, isError, error } = useMovieQuery();
+
+  if (isLoading)
+    return (
+      <h1
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        ...loading
+      </h1>
+    );
+  if (isError) return <pre>{JSON.stringify(error)}</pre>;
+  if (isFetching) return <div>...isFetching</div>;
 
   return (
     <StyledMainContent layout={layout}>
@@ -64,6 +70,7 @@ export const Trending = ({ data }: MoveData) => {
             release_date,
             overview,
             vote_count,
+            id,
           }: Movie) => {
             return (
               <>
@@ -75,13 +82,14 @@ export const Trending = ({ data }: MoveData) => {
                   releaseDate={release_date}
                   overview={overview}
                   voteCount={vote_count}
+                  id={id}
                 />
               </>
             );
           }
         )
       ) : (
-        <div>none</div>
+        <div>No Data</div>
       )}
     </StyledMainContent>
   );

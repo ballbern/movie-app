@@ -1,4 +1,6 @@
-import React, { useContext, createContext, ReactNode } from "react";
+import { useContext, createContext, ReactNode, useState } from "react";
+import { useQuery, useQueryClient } from "react-query";
+import { getData } from "../data/getDate";
 
 type MovieProviderProps = {
   children: ReactNode;
@@ -8,6 +10,9 @@ type MovieContextProps = {
   gridLayout: (num: number) => void;
   toggleTheme: (toggle: boolean) => void;
   layout: number;
+  prevPage: () => void;
+  nextPage: () => void;
+  page: number;
 };
 
 // create the context.
@@ -20,7 +25,8 @@ export const useMovie = () => {
 
 // the context provider.
 export const MovieProvider = ({ children }: MovieProviderProps) => {
-  const [layout, setLayout] = React.useState(3);
+  const [layout, setLayout] = useState(3);
+  const [page, setPage] = useState(1);
 
   const gridLayout = (num: number) => setLayout(num);
 
@@ -33,12 +39,19 @@ export const MovieProvider = ({ children }: MovieProviderProps) => {
     }
   };
 
+  const nextPage = () => setPage(prevPage => prevPage + 1);
+
+  const prevPage = () => setPage(prevPage => prevPage - 1);
+
   return (
     <MovieContext.Provider
       value={{
         gridLayout,
         toggleTheme,
+        nextPage,
+        prevPage,
         layout,
+        page,
       }}
     >
       {children}

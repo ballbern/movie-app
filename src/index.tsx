@@ -5,6 +5,7 @@ import App from "./App";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter } from "react-router-dom";
+import { MovieProvider } from "./context/MovieContext";
 
 const queryClient = new QueryClient();
 
@@ -15,8 +16,10 @@ root.render(
   <BrowserRouter>
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>
-        <App />
-        <ReactQueryDevtools />
+        <MovieProvider>
+          <App />
+          <ReactQueryDevtools />
+        </MovieProvider>
       </QueryClientProvider>
     </React.StrictMode>
   </BrowserRouter>

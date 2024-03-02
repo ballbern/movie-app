@@ -12,11 +12,11 @@ export const StyledToggle = styled.label`
     height: 0;
 
     &:checked + span {
-      background-color: var(--button-color);
+      background-color: var(--toggle-background-color);
     }
 
     &:focus + span {
-      box-shadow: 0 0 1px #2196f3;
+      box-shadow: 0 0 1px var(--blue);
     }
 
     &:checked + span:before {
@@ -34,7 +34,7 @@ export const StyledToggle = styled.label`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--toggle-background-color);
     -webkit-transition: 0.4s;
     transition: 0.4s;
     border-radius: 34px;

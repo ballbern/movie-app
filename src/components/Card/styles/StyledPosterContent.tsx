@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
-export const StyledPosterContent = styled.span`
+export const StyledBackContent = styled.span`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
-export const StylePosterInfo = styled.div`
+export const StyleBackInfo = styled.div`
   display: flex;
   gap: 1rem;
 
   & p {
-    font-size: 14px;
-    height: 194px;
+    font-size: 0.8em;
+    max-height: 200px;
     overflow: auto;
     padding: 0 1.5rem 0 0;
     line-height: 1.5rem;
@@ -47,7 +47,7 @@ export const StylePosterInfo = styled.div`
   }
 `;
 
-export const StyledPosterFooter = styled.footer`
+export const StyledBackFooter = styled.footer`
   display: flex;
   justify-content: space-between;
   padding: 0 1.5rem 1rem 1.5rem;

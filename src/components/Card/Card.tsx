@@ -5,9 +5,9 @@ import { Image } from "../Image/Image";
 import {
   StyledCard,
   StyledBackdropContent,
-  StyledPosterContent,
-  StylePosterInfo,
-  StyledPosterFooter,
+  StyledBackContent,
+  StyleBackInfo,
+  StyledBackFooter,
 } from "./styles";
 import styled from "styled-components";
 
@@ -19,6 +19,7 @@ type CardProps = {
   releaseDate: string;
   overview: string;
   voteCount: number;
+  id: number;
 };
 
 const StyledIconText = styled.div`
@@ -26,6 +27,8 @@ const StyledIconText = styled.div`
   align-items: end;
   gap: 0.5rem;
 `;
+
+//todo break this down into components - front and back views of card could be two different components.
 
 export const Card = ({
   backdropPath,
@@ -35,54 +38,59 @@ export const Card = ({
   releaseDate,
   overview,
   voteCount,
+  id,
 }: CardProps): React.ReactElement => {
   const [rotate, setRotate] = React.useState(false);
 
-  const cardClick = () => setRotate(!rotate);
+  const cardClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
+    setRotate(!rotate);
 
   return (
-    <>
-      <StyledCard rotate={rotate} onClick={cardClick}>
-        <>
-          {!rotate ? (
-            <>
-              <Image path={!rotate ? backdropPath : posterPath} title={title} />
-              <StyledBackdropContent>
-                <span>{title}</span>
-                <StyledIconText>
-                  <span>{voteAverage}</span>
-                  <AiFillStar color='var(--star-color)' />
-                </StyledIconText>
-              </StyledBackdropContent>
-            </>
-          ) : (
-            <StyledPosterContent>
-              <StylePosterInfo>
-                <Image width={110} path={posterPath} title={title} />
+    <StyledCard
+      rotate={rotate.toString()}
+      onClick={e => cardClick(e)}
+      id={id}
+      key={id}
+    >
+      <>
+        {!rotate ? (
+          <div id={id.toString()}>
+            <Image path={!rotate ? backdropPath : posterPath} title={title} />
+            <StyledBackdropContent>
+              <span>{title}</span>
+              <StyledIconText>
+                <span>{voteAverage.toFixed(1)}</span>
+                <AiFillStar color='var(--star-color)' />
+              </StyledIconText>
+            </StyledBackdropContent>
+          </div>
+        ) : (
+          <StyledBackContent>
+            <StyleBackInfo>
+              <Image width={110} path={posterPath} title={title} />
+              <div>
                 <div>
-                  <div>
-                    <header>
-                      <div>{title}</div>
-                      <div>{releaseDate}</div>
-                    </header>
-                  </div>
-                  <p>{overview}</p>
+                  <header>
+                    <div>{title}</div>
+                    <div>{releaseDate}</div>
+                  </header>
                 </div>
-              </StylePosterInfo>
-              <StyledPosterFooter>
-                <StyledIconText>
-                  <span>{voteAverage}</span>
-                  <AiFillStar color='var(--star-color)' />
-                </StyledIconText>
-                <StyledIconText>
-                  <span>{voteCount}</span>
-                  <BsFillHandThumbsUpFill color='var(--thumb-color)' />
-                </StyledIconText>
-              </StyledPosterFooter>
-            </StyledPosterContent>
-          )}
-        </>
-      </StyledCard>
-    </>
+                <p>{overview}</p>
+              </div>
+            </StyleBackInfo>
+            <StyledBackFooter>
+              <StyledIconText>
+                <span>{voteAverage.toFixed(1)}</span>
+                <AiFillStar color='var(--star-color)' />
+              </StyledIconText>
+              <StyledIconText>
+                <span>{voteCount}</span>
+                <BsFillHandThumbsUpFill color='var(--thumb-color)' />
+              </StyledIconText>
+            </StyledBackFooter>
+          </StyledBackContent>
+        )}
+      </>
+    </StyledCard>
   );
 };

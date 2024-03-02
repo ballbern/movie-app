@@ -1,12 +1,12 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ButtonProps } from "../Button";
 
-type StyledButtonProps = Pick<ButtonProps, "hasBorder" | "active">;
+type StyledButtonProps = Pick<ButtonProps, "hasborder" | "active">;
 
 export const StyledButton = styled.button<StyledButtonProps>`
   background: none;
-  border: ${({ hasBorder, active }) =>
-    hasBorder
+  border: ${({ hasborder, active }) =>
+    hasborder === "true"
       ? `solid 2px ${
           !active ? "var(--button-color)" : "var(--button-active-color)"
         }`
@@ -20,8 +20,15 @@ export const StyledButton = styled.button<StyledButtonProps>`
   outline: inherit;
 
   &:hover {
-    border: ${({ hasBorder }) =>
-      hasBorder ? "solid 2px var(--layout-icon-color)" : "none"};
+    border: ${({ hasborder }) =>
+      hasborder === "true" ? "solid 2px var(--layout-icon-color)" : "none"};
     color: var(--button-color);
   }
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      opacity: 0.5;
+      pointer-events: none;
+    `}
 `;
