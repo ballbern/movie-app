@@ -17,12 +17,10 @@ import axios from "axios";
   }
   */
 
-const apiKey = "2ba9f3492d57f79d787719c59122c520";
-
 export const getData = async (page = 1) => {
   return await axios
     .get(
-      `https://api.themoviedb.org/3/trending/movie/day?api_key=${apiKey}&page=${page}`
+      `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
     )
     .then(res => res.data);
 };

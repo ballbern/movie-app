@@ -1,6 +1,4 @@
 import { useContext, createContext, ReactNode, useState } from "react";
-import { useQuery, useQueryClient } from "react-query";
-import { getData } from "../data/getDate";
 
 type MovieProviderProps = {
   children: ReactNode;
