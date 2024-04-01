@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/movie-app/static/css/main.b8ea50b4.css",
+    "main.js": "/movie-app/static/js/main.3c50398a.js",
+    "static/media/Exo2-Bold.woff": "/movie-app/static/media/Exo2-Bold.1cdbbb893470279175de.woff",
+    "static/media/Exo2-SemiBold.woff": "/movie-app/static/media/Exo2-SemiBold.80aefc1a20283b77f3b8.woff",
+    "static/media/Exo2-Light.woff": "/movie-app/static/media/Exo2-Light.a63a7c1c5566d6f9f06a.woff",
+    "static/media/Exo2-Black.woff": "/movie-app/static/media/Exo2-Black.7d33af45a6c7fd297ceb.woff",
+    "static/media/Exo2-Regular.woff": "/movie-app/static/media/Exo2-Regular.ed3d460c529e8c778d31.woff",
+    "static/media/Exo2-ExtraLight.woff": "/movie-app/static/media/Exo2-ExtraLight.f5918cadcff9cf7e68c7.woff",
+    "static/media/Exo2-Thin.woff": "/movie-app/static/media/Exo2-Thin.3e93eb887d2768d80c3f.woff",
+    "static/media/Exo2-Bold.woff2": "/movie-app/static/media/Exo2-Bold.d756b99d613a600d5c8e.woff2",
+    "static/media/Exo2-SemiBold.woff2": "/movie-app/static/media/Exo2-SemiBold.8039315034059574e14c.woff2",
+    "static/media/Exo2-Light.woff2": "/movie-app/static/media/Exo2-Light.405c84056a3bc4732042.woff2",
+    "static/media/Exo2-Regular.woff2": "/movie-app/static/media/Exo2-Regular.040d61f492966f4d232c.woff2",
+    "static/media/Exo2-Black.woff2": "/movie-app/static/media/Exo2-Black.f37d54aad4049d832558.woff2",
+    "static/media/Exo2-ExtraLight.woff2": "/movie-app/static/media/Exo2-ExtraLight.babbb43bf452f930e60d.woff2",
+    "static/media/Exo2-Thin.woff2": "/movie-app/static/media/Exo2-Thin.4fb69ad047a999a45e62.woff2",
+    "index.html": "/movie-app/index.html",
+    "main.b8ea50b4.css.map": "/movie-app/static/css/main.b8ea50b4.css.map",
+    "main.3c50398a.js.map": "/movie-app/static/js/main.3c50398a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b8ea50b4.css",
+    "static/js/main.3c50398a.js"
+  ]
+}
