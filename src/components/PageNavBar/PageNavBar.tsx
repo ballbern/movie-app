@@ -7,9 +7,16 @@ import { GrPrevious, GrNext } from "react-icons/gr";
 const StyledPageNav = styled.span`
   display: flex;
   align-items: center;
-`;
 
-//todo theme is not being applied to element. need to fix this.
+  & > button > svg > polyline {
+    stroke: var(--nav-icon-color);
+  }
+
+  & > span {
+    color: var(--text-color);
+    margin-bottom: 0.2rem;
+  }
+`;
 
 export const PageNavBar = () => {
   const { prevPage, nextPage, page } = useMovie();

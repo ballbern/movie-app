@@ -2,7 +2,7 @@ import { TbSquareRoundedLetterM } from "react-icons/tb";
 import { StyledHeader, StyledHeaderLogo } from "./styles";
 import { Toggle } from "../Toggle/Toggle";
 import { useMovie } from "../../context/MovieContext";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const Header = () => {
   const { toggleTheme } = useMovie();
@@ -10,7 +10,7 @@ export const Header = () => {
 
   const handleToggle = () => setChecked(!checked);
 
-  React.useEffect(() => toggleTheme(checked), [checked, toggleTheme]);
+  useEffect(() => toggleTheme(checked), [checked, toggleTheme]);
 
   return (
     <StyledHeader>

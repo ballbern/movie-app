@@ -1,9 +1,14 @@
-# Getting Started with Create React App
+# Movie App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Stack
 
-## Available Scripts
+- [React](https://react.dev/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Styled Components](https://styled-components.com/)
+- [react-query](https://tanstack.com/query/v4/docs/framework/react/overview)
+- [testing-library](https://testing-library.com/docs/react-testing-library/intro/)
+- [react-icons](https://react-icons.github.io/react-icons/)
 
-In the project directory, you can run:
+## API
 
-### `npm start`
+[themoviedb.org](api.themoviedb.org)

@@ -37,7 +37,7 @@ function App() {
         <Route path='/movies' element={<Movies />} />
         <Route path='/tv' element={<TV />} />
       </Routes>
-      {/* <PageNavBar /> */}
+      <PageNavBar />
       <Footer />
     </>
   );

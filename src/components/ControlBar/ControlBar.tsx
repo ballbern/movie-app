@@ -3,20 +3,14 @@ import {
   TfiLayoutColumn3,
   TfiLayoutWidthFull,
 } from "react-icons/tfi";
-import { GrPrevious, GrNext } from "react-icons/gr";
 import { StyledControlsBar } from "./styles";
 import { Button } from "../Button/Button";
 import { NavLink } from "react-router-dom";
 import { useMovie } from "../../context/MovieContext";
-import styled from "styled-components";
-
-const StyledPageNav = styled.span`
-  display: flex;
-  align-items: center;
-`;
+import { PageNavBar } from "../PageNavBar/PageNavBar";
 
 export const ControlsBar = () => {
-  const { gridLayout, layout, prevPage, nextPage, page } = useMovie();
+  const { gridLayout, layout } = useMovie();
 
   return (
     <>
@@ -38,19 +32,7 @@ export const ControlsBar = () => {
           <NavLink style={{ textDecoration: "none" }} to='/tv'>
             {({ isActive }) => <Button active={isActive}>TV</Button>}
           </NavLink>
-          <StyledPageNav>
-            <Button
-              disabled={page <= 1 && true}
-              hasborder={"false"}
-              onClick={prevPage}
-            >
-              <GrPrevious size={"20px"} />
-            </Button>
-            <span>{page}</span>
-            <Button hasborder={"false"} onClick={nextPage}>
-              <GrNext size={"20px"} />
-            </Button>
-          </StyledPageNav>
+          <PageNavBar />
         </span>
 
         <span style={{ display: "flex", justifySelf: "end" }}>
